@@ -1,0 +1,38 @@
+
+
+/* canvas {
+    width: 800px !important;
+    height: 217px !important;
+} */
+  
+.chart__container {
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #ffffff;
+    width: 1000px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.up_or_down {
+    display: inline-block;
+    position: relative;
+    right: -100px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    color: #DD425A;
+}
+
+.up_or_down #import_percentage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
