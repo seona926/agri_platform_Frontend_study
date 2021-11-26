@@ -1,0 +1,181 @@
+@charset "UTF-8";
+#wrap {
+  min-width: 1280px;
+}
+
+/*********************login_header 공통*******************************/
+#header {
+  height: 56px;
+  background: #4b48fd;
+}
+#header .header_inner {
+  width: 1150px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.logo a {
+  display: block;
+  width: 90px;
+  height: 40px;
+  margin: 9px 32px 0 0;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+.gnb_wrap {
+  width: 660px;
+  line-height: 56px;
+}
+.gnb {
+  display: flex;
+}
+.gnb li {
+  width: 110px;
+  text-align: center;
+}
+.gnb li a {
+  color: #adabfb;
+  display: block;
+}
+.gnb li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.intro_menu {
+  display: flex;
+}
+.intro_menu .notice {
+  display: block;
+  width: 28px;
+  height: 28px;
+  background: url(../images/ic_notifications.svg) no-repeat center center / cover;
+  margin: 17px 19px 0 49px;
+}
+.member_wrap {
+  height: 110px;
+  margin: 12px 33px 0 0;
+  z-index: 100;
+}
+.member_wrap .user_name {
+  display: block;
+  width: 100px;
+  height: 31px;
+  line-height: 31px;
+  color: #fff;
+  background: url(../images/ic_expand_down.svg) no-repeat 82px center / 17px;
+  border-radius: 8px 8px 0px 0px;
+  padding-right: 15px;
+  text-align: center;
+}
+.member_wrap .user_name.on {
+  background: url(../images/ic_expand_up.svg) no-repeat 82px center / 17px;
+  background-color: #615eff;
+}
+.member_wrap .user_menu {
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%), #ffffff;
+  box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 0px 0px 8px 8px;
+  text-align: center;
+  padding: 0 18px;
+}
+.member_wrap .user_menu li:first-child {
+  border-bottom: 1px solid #7a77ff;
+}
+.member_wrap .user_menu a {
+  line-height: 40px;
+  display: block;
+  color: #615eff;
+  font-weight: 500;
+  font-size: 13px;
+}
+.intro_menu .logout {
+  width: 52px;
+  color: #fff;
+  margin: 19px 37px 0 0;
+}
+.lang_wrap .lang {
+  background: url(../images/ic_language.svg) no-repeat left center/ 16.67px 16.67px;
+  border: none;
+  color: #fff;
+  padding-left: 18px;
+  margin-top: 19px;
+}
+
+/*********************logout_header 공통*******************************/
+.intro_menu a {
+  color: #ffffff;
+}
+.logout_intro {
+  overflow: hidden;
+  width: 125px;
+  margin: 0 38px 0 141px;
+  line-height: 56px;
+}
+.logout_intro li {
+  float: left;
+}
+.logout_intro li:first-child {
+  margin-right: 34px;
+}
+
+/*********************footer 공통*******************************/
+footer {
+  width: 100%;
+  height: 112px;
+  background-color: #fff;
+}
+.footer_inner {
+  width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.footer_inner > div {
+  float: left;
+}
+.f_logo {
+  width: 90px;
+  height: 40px;
+  margin: 36px 90px 0 0;
+}
+.f_logo img {
+  width: 100%;
+  height: 100%;
+}
+.copy .footer_menu {
+  margin-top: 30px;
+  height: 22px;
+  overflow: hidden;
+}
+.copy .footer_menu li {
+  margin-left: 48px;
+  float: left;
+}
+.copy .footer_menu li:first-child {
+  margin-left: 0;
+}
+.copy a {
+  color: #383838;
+  font-size: 18px;
+  font-weight: 500;
+}
+.copy .copy_2 {
+  display: block;
+  padding-top: 16px;
+  font-size: 16px;
+}
+.footer_inner .sns {
+  float: right;
+  margin-top: 30px;
+}
+.sns_list {
+  margin-left: 95px;
+}
+.sns_list li {
+  display: inline-block;
+}
+.sns .contact {
+  font-size: 16px;
+  color: #383838;
+}

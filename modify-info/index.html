@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" type="text/css" />
+    <title>(Myinfo)</title>
+    <link href="common.css" rel="stylesheet" type="text/css" />
+    <link href="layout.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./jquery-ui.css">
+  </head>
+  <body>
+    <div id="popup_wrap">
+      <!-- 나의정보 팝업 -->
+      <div class="dimm"></div>
+      <div class="popup_box popup_box01 box_style" id="corpInfoPopup" style="overflow-x: hidden">
+        <ul class="popup_tab popup_tab01">
+          <li class="on">
+            <a href="#" rel="tab1" class="tab1">
+              <i>
+                <svg width="28" height="28">
+                  <path
+                    d="M12.833 8.17h2.334v2.333h-2.334V8.169Zm0 4.666h2.334v7h-2.334v-7ZM14 2.336c-6.44 0-11.667 5.227-11.667 11.667 0 6.44 5.227 11.666 11.667 11.666 6.44 0 11.667-5.226 11.667-11.666S20.44 2.336 14 2.336Zm0 21c-5.145 0-9.333-4.188-9.333-9.333 0-5.145 4.188-9.334 9.333-9.334 5.145 0 9.333 4.189 9.333 9.334S19.145 23.336 14 23.336Z"
+                  />
+                </svg>
+              </i>
+              나의정보
+            </a>
+          </li>
+          <li><a href="#" rel="tab2" class="tab2">설정</a></li>
+        </ul>
+        <div class="corp_box tab_content" id="tab1">
+          <span class="popup_tit">회사정보</span>
+          <div class="corp_box_top box_style clearfix">
+            <dl>
+              <dt>회사이름</dt>
+              <dd>(주) 시티랩스</dd>
+            </dl>
+            <hr style="width: 740px; height: 1px; border: solid 1px #eaeaea; position: absolute; top: 60px; left: 30px" />
+            <dl>
+              <dt>업종</dt>
+              <dd>Distributor / Wholesaler</dd>
+            </dl>
+            <hr style="width: 740px; height: 1px; border: solid 1px #eaeaea; position: absolute; top: 120px; left: 30px" />
+            <dl>
+              <dt>사무실 전화번호</dt>
+              <dd class="input_1">+82 031-1234-4567
+              <dd class="click" style="font-size: 13px" onclick="modifyPhoneNumber()">편집</dd>
+              <button class="save-btn1" style="display: none;"><a href="#">저장</a></button>
+            </dl>
+            <hr style="width: 740px; height: 1px; border: solid 1px #eaeaea; position: absolute; top: 180px; left: 30px" />
+            <dl>
+              <dt>사무실 주소</dt>
+              <dd class="input_2">경기도 안양시 만안구 예술공원로 153-32</dd>
+              <dd class="click2" style="font-size: 13px" onclick="modifyAddress()">편집</dd>
+              <button class="save-btn2" style="display: none;"><a href="#">저장</a></button>
+            </dl>
+            <hr style="width: 740px; height: 1px; border: solid 1px #eaeaea; position: absolute; top: 240px; left: 30px" />
+            <dl>
+              <dt>회사 설립일</dt>
+              <dd class="input">YYYY-MM-DD</dd>
+              <dd class="click3" style="font-size: 13px" onclick="modifyFoundation()">편집</dd>
+              <button class="save-btn3" style="display: none;"><a href="#">저장</a></button>
+            </dl>
+          </div>
+          <div class="corp_box_btm clearfix">
+            <div class="corp_box_l">
+              <span class="popup_tit">가입한 플랜</span>
+              <div class="chart_box">
+                <div class="bar_chart_basic">
+                  <h3>BASIC</h3>
+                  <svg width="60" height="60" viewBox="0 0 100 100" fill="none;" xmlns="http://www.w3.org/2000/svg" style="fill: #4b48fd; margin-left: 95px; margin-top: 8px">
+                    <path
+                      d="M57.5352 30.2807C51.4489 36.2282 50.2228 45.2666 50.0015 49.6933C49.7835 45.2666 48.5542 36.2282 42.4647 30.2807C36.9504 24.8946 28.8353 23.4047 23.9877 23.0129C22.9069 22.9265 21.8452 23.3059 21.0804 24.0494C20.3157 24.7928 19.9238 25.8355 20.0123 26.8843C20.4168 31.6133 21.9431 39.5443 27.4575 44.9211C33.0319 50.3658 41.2607 51.8311 46.0862 52.2074V72.7769C46.0862 75.109 47.7421 77 50.1343 77C52.5233 77 54.1823 75.109 54.1823 72.7769V52.1859C59.0394 51.7787 67.0629 50.2671 72.5393 44.9242C78.0505 39.5443 79.5831 31.6226 79.9876 26.8874C80.0761 25.8355 79.6874 24.7928 78.9227 24.0494C78.1579 23.3029 77.093 22.9234 76.0122 23.0129C71.1678 23.4016 63.0527 24.8946 57.5352 30.2807Z"
+                      fill="#4B48FD;"
+                    />
+                  </svg>
+                  <span>구독중</span>
+                  <div class="chart_list">
+                    <ul>
+                      <li class="one">
+                        <svg width="34" height="30" viewBox="0 0 100 100" fill="none;" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="#4B48FD" />
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="url(#paint0_linear)" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg width="34" height="30" viewBox="0 0 100 100" fill="none;" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="#4B48FD" />
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="url(#paint0_linear)" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg width="34" height="30" viewBox="0 0 100 100" fill="none;" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="#4B48FD" />
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="url(#paint0_linear)" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg width="34" height="30" viewBox="0 0 100 100" fill="none;" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="#4B48FD" />
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="url(#paint0_linear)" />
+                        </svg>
+                      </li>
+                    </ul>
+                    <ul>
+                      <li class="one">베이직 플랜 모든 서비스 액세스</li>
+                      <li><a href="#">수입 데이터 엑세스</a></li>
+                      <li><a href="#">오퍼</a></li>
+                      <li><a href="#">판매자 리스트</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="bar_chart_standard">
+                  <h3>standard</h3>
+                  <svg width="70" height="70" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: #d2d2d2; margin-left: 85px; margin-top: 1px">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M64.7551 58.5589C63.5571 58.5589 62.4188 58.0296 61.6447 57.1146C58.1595 52.9953 53.0035 45.4299 53 36.7777C53.0035 28.1255 58.163 20.5601 61.6482 16.4409C62.4223 15.5224 63.5642 15 64.7621 15C65.9635 15 67.0984 15.5294 67.876 16.4444C71.3577 20.5671 76.5207 28.129 76.5207 36.7777C76.5207 45.4334 71.3542 52.9988 67.8725 57.1181C67.0949 58.0366 65.9565 58.5589 64.7551 58.5589ZM65.0017 83.442C65.2524 78.3263 66.642 67.881 73.5398 61.0077C79.7929 54.7833 88.99 53.0578 94.4804 52.6086C95.7052 52.5053 96.9121 52.9438 97.7789 53.8065C98.6456 54.6656 99.0861 55.8706 98.9858 57.0862C98.5274 62.5585 96.7904 71.7133 90.5444 77.9306C84.3378 84.1051 75.2445 85.8519 69.7399 86.3225V110.119C69.7399 112.814 67.8596 114.999 65.1521 114.999C62.4409 114.999 60.5643 112.814 60.5643 110.119V86.3475C55.0954 85.9125 45.7694 84.2192 39.4518 77.927C33.2022 71.7133 31.4724 62.5478 31.014 57.0827C30.9137 55.8706 31.3578 54.6656 32.2245 53.8065C33.0912 52.9473 34.2945 52.5088 35.5194 52.6086C41.0133 53.0614 50.2104 54.7833 56.46 61.0077C63.3614 67.881 64.7545 78.3263 65.0017 83.442Z"
+                      fill="#D2D2D2;"
+                    />
+                  </svg>
+                  <div class="chart_list">
+                    <ul>
+                      <li class="one">
+                        <svg width="34" height="30" viewBox="0 0 100 100" fill="none;" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="#4B48FD" />
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="url(#paint0_linear)" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg width="34" height="30" viewBox="0 0 100 100" fill="none;" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="#4B48FD" />
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="url(#paint0_linear)" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg width="34" height="30" viewBox="0 0 100 100" fill="none;" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="#4B48FD" />
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="url(#paint0_linear)" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg width="34" height="30" viewBox="0 0 100 100" fill="none;" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="#4B48FD" />
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="url(#paint0_linear)" />
+                        </svg>
+                      </li>
+                    </ul>
+                    <ul>
+                      <li class="one">베이직 플랜 모든 서비스 액세스</li>
+                      <li><a href="#">수입 데이터 엑세스</a></li>
+                      <li><a href="#">오퍼</a></li>
+                      <li><a href="#">판매자 리스트</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="bar_chart_pro">
+                  <h3>pro</h3>
+                  <svg width="69" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: #d2d2d2; margin-left: 90px; margin-top: 8px">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M45.9847 72.058C42.7485 73.9351 38.9897 75.0101 34.9796 75.0101C22.8406 75.0101 13 65.165 13 53.0203C13 43.472 19.0837 35.3463 27.5839 32.3081C28.4426 20.9491 37.9266 12 49.5 12C61.0734 12 70.5574 20.9491 71.4161 32.3079C79.9165 35.3462 86 43.4718 86 53.0202C86 63.6467 78.4658 72.5127 68.4501 74.5632C67.0193 74.8561 65.5378 75.0099 64.0204 75.0099C59.9964 75.01 56.2254 73.9276 52.9815 72.0383V84.5016C52.9815 86.4337 51.4152 88 49.4831 88C47.551 88 45.9847 86.4337 45.9847 84.5016V72.058Z"
+                      fill="#D2D2D2"
+                    />
+                  </svg>
+                  <div class="chart_list">
+                    <ul>
+                      <li class="one">
+                        <svg width="34" height="30" viewBox="0 0 100 100" fill="none;" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="#4B48FD" />
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="url(#paint0_linear)" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg width="34" height="30" viewBox="0 0 100 100" fill="none;" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="#4B48FD" />
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="url(#paint0_linear)" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg width="34" height="30" viewBox="0 0 100 100" fill="none;" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="#4B48FD" />
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="url(#paint0_linear)" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg width="34" height="30" viewBox="0 0 100 100" fill="none;" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="#4B48FD" />
+                          <path d="M37.5007 67.3743L20.1257 49.9993L14.209 55.8743L37.5007 79.166L87.5007 29.166L81.6257 23.291L37.5007 67.3743Z" fill="url(#paint0_linear)" />
+                        </svg>
+                      </li>
+                    </ul>
+                    <ul>
+                      <li class="one">베이직 플랜 모든 서비스 액세스</li>
+                      <li><a href="#">수입 데이터 엑세스</a></li>
+                      <li><a href="#">오퍼</a></li>
+                      <li><a href="#">판매자 리스트</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="import_status_box tab_content" id="tab2">
+          <div class="import_box_top clearfix">
+            <div class="import_box_l">
+              <button class="btn_1">
+                <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M83.3327 45.8327H32.6243L55.916 22.541L49.9993 16.666L16.666 49.9993L49.9993 83.3327L55.8743 77.4577L32.6243 54.166H83.3327V45.8327Z" fill="#383838" />
+                  <path d="M83.3327 45.8327H32.6243L55.916 22.541L49.9993 16.666L16.666 49.9993L49.9993 83.3327L55.8743 77.4577L32.6243 54.166H83.3327V45.8327Z" fill="url(#paint0_linear)" />
+                </svg>
+              </button>
+              <span class="popup_tit">탈퇴하기</span>
+              <div class="chart_box2 box_style" style="height: 379px">
+                <div class="corp_caption_1">
+                  <h3>
+                    그동안 Fooda 서비스를 이용해주셔서 감사합니다.<br />
+                    아래 내용을 확인하시고 탈퇴를 진행해주세요.
+                  </h3>
+                  <p>
+                    저희는 귀하의 정보를 30일동안만 유지합니다.<br />
+                    그 후엔 해당 아이디에 대한 회원정보 및 서비스 정보는 모두 삭제됩니다.
+                  </p>
+                </div>
+                <hr style="width: 740px; height: 1px; border: solid 1px #eaeaea; position: relative; top: 67px; left: 5px" />
+                <div class="bar_chart_box_1">
+                  <h3>탈퇴 처리 이메일 안내</h3>
+                  <span>아래 이메일이 탈퇴 처리 됩니다.</span>
+                  <ul>
+                    <li>탈퇴 이메일 주소</li>
+                    <li><a href="#">lskdjvlsjdfk</a></li>
+                  </ul>
+                  <ul>
+                    <li>비밀번호 입력</li>
+                    <li><input type="날짜" name="" id="" placeholder="**********" /></li>
+                    <li><button class="out">탈퇴하기</button></li>
+                    <hr style="width: 300px; height: 1px; border: solid 1px #eaeaea; position: relative; top: -6px; left: -24px" />
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--비밀번호 변경-->
+            <div class="import_box_p">
+              <span class="popup_tit">계정설정</span>
+              <div class="corp_box_top box_style clearfix" style="height: 412px">
+                <dl>
+                  <dt>이메일 주소</dt>
+                  <input type="text" name="str_email01" id="str_email01" style="width: 219px; padding: 5px 0px" placeholder="citylabs@citylabs.co.kr" />
+                </dl>
+                <hr style="width: 740px; height: 1px; border: solid 1px #eaeaea; position: absolute; top: 60px; left: 30px" />
+                <dl>
+                  <dt>휴대폰 번호</dt>
+                  <input type="text" name="str_email01" id="str_email01" style="width: 219px" placeholder="010-1234-5678" />
+                </dl>
+                <hr style="width: 740px; height: 1px; border: solid 1px #eaeaea; position: absolute; top: 120px; left: 30px" />
+                <dl class="none">
+                  <dt>비밀번호 변경</dt>
+                  <dd><input type="text" name="str_email01" id="str_email01" style="width: 219px; margin-top: 5px" placeholder="**********" /></dd>
+                </dl>
+                <ul class="a_wrap" style="border-bottom: 1px solid #eaeaea">
+                  <li>
+                    <a href="#">변경하기 </a>
+                    <ul class="sub">
+                      <li><a href="#">기존 비밀번호를 입력</a></li>
+                      <li>
+                        <a href="#"
+                          ><input type="text" name="str_email01" id="str_email01" style="width: 219px; margin-top: 18px; border: none" placeholder="**********" />
+                          <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M49.9993 24.9967C65.791 24.9967 79.8743 33.8717 86.7493 47.9134C84.291 52.9967 80.8327 57.3717 76.7077 60.9134L82.5827 66.7884C88.3743 61.6634 92.9577 55.2467 95.8327 47.9134C88.6243 29.6217 70.8327 16.6634 49.9993 16.6634C44.7077 16.6634 39.6243 17.4967 34.8327 19.0384L41.7077 25.9134C44.416 25.3717 47.166 24.9967 49.9993 24.9967ZM45.541 29.7467L54.166 38.3717C56.541 39.4134 58.4577 41.3301 59.4993 43.7051L68.1243 52.3301C68.4577 50.9134 68.7077 49.4134 68.7077 47.8717C68.7493 37.5384 60.3327 29.1634 49.9993 29.1634C48.4577 29.1634 46.9993 29.3717 45.541 29.7467ZM8.37435 16.1217L19.541 27.2884C12.7493 32.6217 7.37435 39.7051 4.16602 47.9134C11.3743 66.2051 29.166 79.1634 49.9993 79.1634C56.3327 79.1634 62.416 77.9551 67.9993 75.7467L82.2493 89.9967L88.1243 84.1217L14.2493 10.2051L8.37435 16.1217ZM39.6243 47.3717L50.4993 58.2467C50.3327 58.2884 50.166 58.3301 49.9993 58.3301C44.2493 58.3301 39.5827 53.6634 39.5827 47.9134C39.5827 47.7051 39.6243 47.5801 39.6243 47.3717ZM25.4577 33.2051L32.7493 40.4967C31.791 42.7884 31.2493 45.2884 31.2493 47.9134C31.2493 58.2467 39.666 66.6634 49.9993 66.6634C52.6243 66.6634 55.1243 66.1217 57.3743 65.1634L61.4577 69.2467C57.791 70.2467 53.9577 70.8301 49.9993 70.8301C34.2077 70.8301 20.1243 61.9551 13.2493 47.9134C16.166 41.9551 20.416 37.0384 25.4577 33.2051Z"
+                              fill="#d2d2d2;"
+                            />
+                            <path
+                              d="M49.9993 24.9967C65.791 24.9967 79.8743 33.8717 86.7493 47.9134C84.291 52.9967 80.8327 57.3717 76.7077 60.9134L82.5827 66.7884C88.3743 61.6634 92.9577 55.2467 95.8327 47.9134C88.6243 29.6217 70.8327 16.6634 49.9993 16.6634C44.7077 16.6634 39.6243 17.4967 34.8327 19.0384L41.7077 25.9134C44.416 25.3717 47.166 24.9967 49.9993 24.9967ZM45.541 29.7467L54.166 38.3717C56.541 39.4134 58.4577 41.3301 59.4993 43.7051L68.1243 52.3301C68.4577 50.9134 68.7077 49.4134 68.7077 47.8717C68.7493 37.5384 60.3327 29.1634 49.9993 29.1634C48.4577 29.1634 46.9993 29.3717 45.541 29.7467ZM8.37435 16.1217L19.541 27.2884C12.7493 32.6217 7.37435 39.7051 4.16602 47.9134C11.3743 66.2051 29.166 79.1634 49.9993 79.1634C56.3327 79.1634 62.416 77.9551 67.9993 75.7467L82.2493 89.9967L88.1243 84.1217L14.2493 10.2051L8.37435 16.1217ZM39.6243 47.3717L50.4993 58.2467C50.3327 58.2884 50.166 58.3301 49.9993 58.3301C44.2493 58.3301 39.5827 53.6634 39.5827 47.9134C39.5827 47.7051 39.6243 47.5801 39.6243 47.3717ZM25.4577 33.2051L32.7493 40.4967C31.791 42.7884 31.2493 45.2884 31.2493 47.9134C31.2493 58.2467 39.666 66.6634 49.9993 66.6634C52.6243 66.6634 55.1243 66.1217 57.3743 65.1634L61.4577 69.2467C57.791 70.2467 53.9577 70.8301 49.9993 70.8301C34.2077 70.8301 20.1243 61.9551 13.2493 47.9134C16.166 41.9551 20.416 37.0384 25.4577 33.2051Z"
+                              fill="url(#paint0_linear)"
+                            />
+                          </svg>
+                        </a>
+                      </li>
+                      <li><a href="#">새로운 비밀번호를 입력</a></li>
+                      <li>
+                        <a href="#"><input type="text" name="str_email01" id="str_email01" style="width: 219px; margin-top: 18px; border: none" placeholder="**********" /></a>
+                      </li>
+                      <li><a href="#">새로운 비밀번호를 확인</a></li>
+                      <li>
+                        <a href="#"><input type="text" name="str_email01" id="str_email01" style="width: 219px; margin-top: 18px; border: none" placeholder="**********" /></a>
+                      </li>
+                      <button>변경</button>
+                    </ul>
+                  </li>
+                </ul>
+                <hr style="width: 740px; height: 1px; border: solid 1px #eaeaea; position: absolute; top: 180px; left: 30px" />
+                <dl>
+                  <dt style="margin-top: 27px">계정 설정</dt>
+                  <dd class="click2" style="font-size: 13px">편집</dd>
+                  <hr style="width: 740px; height: 1px; border: solid 1px #eaeaea; position: absolute; top: 240px; left: 30px" />
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="popup_close">팝업창 닫기</button>
+      </div>
+
+      <!--pop_up-->
+      <div id="pop_body">
+        <div class="pop_in">
+          <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: 84px; margin-left: 109px">
+            <path d="M74 50H58V56H74V50Z" fill="#4B48FD" />
+            <path d="M74 62H58V68H74V62Z" fill="#4B48FD" />
+            <path
+              d="M82 30H62V18C62 13.6 58.4 10 54 10H46C41.6 10 38 13.6 38 18V30H18C13.6 30 10 33.6 10 38V82C10 86.4 13.6 90 18 90H82C86.4 90 90 86.4 90 82V38C90 33.6 86.4 30 82 30ZM46 30V18H54V30V38H46V30ZM82 82H18V38H38C38 42.4 41.6 46 46 46H54C58.4 46 62 42.4 62 38H82V82Z"
+              fill="#BABABA"
+            />
+            <path d="M37.998 62C41.3118 62 43.998 59.3137 43.998 56C43.998 52.6863 41.3118 50 37.998 50C34.6843 50 31.998 52.6863 31.998 56C31.998 59.3137 34.6843 62 37.998 62Z" fill="#4B48FD" />
+            <path d="M46.318 66.72C43.758 65.6 40.958 65 37.998 65C35.038 65 32.238 65.6 29.678 66.72C27.438 67.68 25.998 69.84 25.998 72.28V74H49.998V72.28C49.998 69.84 48.558 67.68 46.318 66.72Z" fill="#4B48FD" />
+          </svg>
+          <h3>정말 탈퇴하시겠습니까?</h3>
+          <button class="yes_btn"><a href="#">예</a></button>
+          <button class="no_btn"><a href="#">아니요</a></button>
+          <button type="button" class="popup_close2">팝업창 닫기</button>
+        </div>
+      </div>
+      <!--pop_up2-->
+      <div id="pop_body_2">
+        <div class="pop_in_2">
+          <svg width="74" height="74" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: 82px; margin-left: 171px">
+            <path
+              d="M21.3846 27.8H28.7691V38.9H65.6919V27.8H73.0765V46.3H80.461V27.8C80.461 23.73 77.138 20.4 73.0765 20.4H57.6427C56.092 16.108 52.0305 13 47.2305 13C42.4305 13 38.369 16.108 36.8183 20.4H21.3846C17.3231 20.4 14 23.73 14 27.8V79.6C14 83.67 17.3231 87 21.3846 87H43.5382V79.6H21.3846V27.8ZM47.2305 20.4C49.2613 20.4 50.9228 22.065 50.9228 24.1C50.9228 26.135 49.2613 27.8 47.2305 27.8C45.1998 27.8 43.5382 26.135 43.5382 24.1C43.5382 22.065 45.1998 20.4 47.2305 20.4Z"
+              fill="#BABABA"
+            />
+            <path d="M80.4618 51.8516L60.1912 72.2016L49.0775 61.1016L43.5391 66.6516L60.1912 83.3016L86.0003 57.4016L80.4618 51.8516Z" fill="#4B48FD" />
+          </svg>
+          <h3>www.thefooda.com</h3>
+          <p>정상적으로 회원탈퇴 처리가 승인되었습니다. 그동안 이용해 주셔서 진심으로 감사합니다.</p>
+          <button class="ok_btn"><a href="#">확인</a></button>
+          <button type="button" class="popup_close3">팝업창 닫기</button>
+        </div>
+      </div>
+    </div>
+    <script src="modify-info.js"></script>
+  </body>
+</html>
