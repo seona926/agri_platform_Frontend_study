@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<script>
+    function timer() {
+        var time = 30; //기준시간 작성
+        var min = ""; //분
+        var sec = ""; //초
+
+        //setInterval(함수, 시간) : 주기적인 실행
+        var x = setInterval(function() {
+            //parseInt() : 정수를 반환
+            min = parseInt(time/60); //몫을 계산
+            sec = time%60; //나머지를 계산
+
+            document.getElementById("demo").innerHTML = min + ":" + sec;
+            time--;
+
+            //타임아웃 시
+            if (time < 0) {
+                clearInterval(x); //setInterval() 실행을 끝냄
+                alert("시간초과");
+            }
+        }, 1000);
+    }
+	
+</script>
+<body>
+    <button id="submit-btn" onclick="timer()">번호인증</button>
+	<div class="timer-container">
+        <input class="number-input" placeholder="휴대폰 인증코드를 입력하세요">
+            <div id="demo"></div>
+            <button id="confirm-btn">확인</button>
+    </div>
+    
+</body>
+</html>

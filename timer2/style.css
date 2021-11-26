@@ -1,0 +1,23 @@
+.hide {
+    display: none;
+}
+
+.timer-container {
+    width: 600px;
+    margin: 0;
+    padding: 0;
+}
+
+#demo, #confirm-btn, .number-input {
+    display: inline-block;
+}
+
+.number-input {
+    width: 300px;
+} 
+
+#demo {
+    width: 50px;
+    position: relative;
+    left: -42px;
+}
