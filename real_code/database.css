@@ -1,0 +1,508 @@
+/********** frontend ************/
+/********** autocomplete ************/
+/* 
+.ui-autocomplete {
+  position: absolute;
+  cursor: default;
+  background: #fff;
+} */
+
+/* html .ui-autocomplete {
+  width: 1px;
+} */
+
+/* without this, the menu expands to 100% in IE6 */
+/* .ui-menu {
+  list-style: none;
+  padding: 20px 30px 0 40px;
+  margin: 0;
+  display: block;
+  float: left;
+  height: 251px;
+  overflow: auto;
+  border: 1px solid #4b48fd;
+  border-top: none;
+  box-sizing: border-box;
+  box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 0 0 28px 28px;
+}
+.ui-menu::after {
+  content: '';
+  width: 938px;
+  height: 1px;
+  background-color: #eaeaea;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.ui-menu .ui-menu-item {
+  width: 100%;
+  height: 67px;
+  padding-top: 15px;
+}
+.ui-menu .ui-menu-item a {
+  text-decoration: none;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+.ui-menu .ui-menu-item a .item-wrap {
+  float: left;
+}
+.ui-menu .ui-menu-item a .favorite {
+  float: right;
+}
+
+.favorite-wrap {
+  position: relative;
+  z-index: 99999;
+}
+
+.ui-menu .ui-menu-item a.ui-state-hover,
+.ui-menu .ui-menu-item a.ui-state-active {
+  font-weight: normal;
+  padding-left: 2px;
+}
+.item-label {
+  font-weight: 400;
+  color: #383838;
+  font-size: 14px;
+  padding-top: 15px;
+}
+.item-desc-list {
+  height: 14px;
+  line-height: 14px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+.item-desc {
+  font-size: 13px;
+  border-right: 1px solid #d2d2d2;
+  padding: 0 26px;
+  float: left;
+}
+.item-desc.first {
+  padding-left: 0;
+}
+.item-desc.last {
+  border-right: none;
+} */
+
+/* ====================autoComplete================== */
+.autoComplete_wrapper {
+    display: inline-block;
+    position: relative;
+    z-index: 998;
+    top: 35px;
+  }
+  
+  #autoComplete {
+    height: 56px;
+    width: 1008px;
+    margin: 0;
+    padding: 0 2rem 0 3.2rem;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: 1rem;
+    text-overflow: ellipsis;
+    color: #383838;
+    /* opacity: 0.5; */
+    outline: none;
+    border: 1px solid #ffffff00;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.03);
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    font-family: Spoqa Han Sans Neo;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  
+  #autoCompleteOn {
+    height: 56px;
+    width: 1008px;
+    margin: 0;
+    padding: 0 2rem 0 3.2rem;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: 1rem;
+    text-overflow: ellipsis;
+    color: #383838;
+    opacity: 1;
+    outline: none;
+    border-top: 1px solid #4b48fd;
+    border-right: 1px solid #4b48fd;
+    border-left: 1px solid #4b48fd;
+    border-bottom: 1px solid #eaeaea;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    transition: all 0.4s ease;
+    font-family: Spoqa Han Sans Neo;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    box-shadow: none;
+  }
+  
+  .btn_search {
+    position: absolute;
+    border: none;
+    top: 77px;
+    right: 14.63%;
+    left: 963.75px;
+    /* opacity: 0.8; */
+    z-index: 10001;
+  }
+  
+  .autoComplete_wrapper > input::placeholder {
+    color: #383838;
+    text-align: center;
+    transition: all 0.3s ease;
+    -webkit-transition: all -webkit-transform 0.3s ease;
+  }
+  
+  .autoComplete_wrapper > input:hover::placeholder {
+    color: rgba(56, 56, 56, 0.6);
+    transition: all 0.3s ease;
+    -webkit-transition: all -webkit-transform 0.3s ease;
+  }
+  
+  .autoComplete_wrapper > input:focus::placeholder {
+    color: rgba(56, 56, 56, 0.6);
+    padding: 0.1rem 0.6rem;
+    font-size: 0.95rem;
+  }
+  
+  .autoComplete_wrapper > input:hover {
+    color: #383838;
+    transition: all 0.3s ease;
+    -webkit-transition: all -webkit-transform 0.3s ease;
+  }
+  
+  .autoComplete_wrapper > input:focus {
+    color: #383838;
+    border: 1px solid #4b48fd;
+  }
+  
+  .autoComplete_wrapper > ul {
+    max-height: 300px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    list-style: none;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    background-color: #fff;
+    border-right: 1px solid #4b48fd;
+    border-left: 1px solid #4b48fd;
+    border-bottom: 1px solid #4b48fd;
+    box-shadow: 0 3px 6px rgba(149, 157, 165, 0.15);
+    outline: none;
+    transition: opacity 0.15s ease-in-out;
+    -moz-transition: opacity 0.15s ease-in-out;
+    -webkit-transition: opacity 0.15s ease-in-out;
+  }
+  
+  .autoComplete_wrapper > ul::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .autoComplete_wrapper > ul[hidden],
+  .autoComplete_wrapper > ul:empty {
+    display: block;
+    opacity: 0;
+    transform: scale(0);
+  }
+  
+  .autoComplete_wrapper > ul > p {
+    height: 20px;
+    margin: 0.3rem;
+    text-align: center;
+    color: #383838;
+  }
+  
+  .autoComplete_wrapper > ul > li {
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    height: 67px;
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: #383838;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.2s ease;
+  }
+  
+  .autoComplete_wrapper > ul > li mark {
+    background-color: transparent;
+    color: #4b48fd;
+    font-weight: bold;
+  }
+  
+  .autoComplete_wrapper > ul > li:hover {
+    cursor: pointer;
+    background-color: rgba(75, 72, 253, 0.1);
+  }
+  
+  .autoComplete_wrapper > ul > li[aria-selected='true'] {
+    background-color: rgba(75, 72, 253, 0.1);
+  }
+  
+  .productInfo {
+    color: #c4c4c4;
+    font-size: 13px;
+  }
+  
+  .infoContents1 {
+    padding-right: 14px;
+  }
+  .infoContents {
+    padding: 14px;
+  }
+  
+  .favorite-btn {
+    margin-left: auto;
+    margin-top: -35px;
+  }
+  /* autoComplete end */
+  
+  /* ====================Modal================== */
+  .modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10002;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modalContent {
+    width: 20%;
+    margin: 400px auto;
+    padding: 20px;
+    border: 1px solid #4b48fd;
+    border-radius: 15px;
+    text-align: center;
+    color: #383838;
+    background-color: #fefefe;
+  }
+  /* Modal end */
+  
+  /************* donut chart *************/
+  
+  .donut-chart {
+    width: 100%;
+  }
+  
+  path.slice {
+    stroke-width: 2px;
+  }
+  
+  polyline {
+    opacity: 0.3;
+    /* stroke: red; */
+    stroke-width: 2px;
+    fill: none;
+  }
+  
+  p {
+    white-space: pre;
+  }
+  
+  .arc path {
+    stroke: #fff;
+  }
+  
+  .chart-container {
+    width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .tooltip-data {
+    height: 40px;
+    padding: 5px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 13px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.427);
+  }
+  
+  /* #main-star svg > * {
+    width: 30px;
+    height: 28.5px;
+  } */
+  
+  
+  #import_product_donut, #import_country_donut {
+    position: relative;
+    left: -48px;
+    top: -20px;
+    font-size: 12px;
+  }
+  
+  #country_donut {
+    font-size: 12px;
+    position: relative;
+    left: -35px;
+    top: 0px;
+  }
+  
+  
+  /************ 구글맵 ************/
+  #google-map {
+    width: 385px;
+    height: 217px;
+    margin: 0;
+    padding: 0;
+  }
+  #search-panel {
+    position: absolute;
+    top: 10px;
+    left: 25%;
+    z-index: 5;
+    background-color: #ffffff;
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+    padding-left: 10px;
+  }
+  
+  
+  /*********** 수입 신고 금액 추이 bar chart ************/
+  
+  #import_amount_bar {
+    width: 250px !important;
+    height: 110px !important;
+    padding-left: 25px;
+  }
+  
+  /*********** 연매출 bar chart ************/
+  /* canvas {
+    width: 330.96px !important;
+    height: 139.3px !important;
+  } */
+  
+  .bar_chart_box {
+    margin-top: 20px;
+  }
+  
+  
+  /********** 현지 가격 추이 line chart *********/
+  #price_line_chart {
+    position: relative;
+    top: -30px;
+    left: 15px;
+  }
+  
+  /********** 최근 3년 연매출 line chart **********/
+  #sales_line_chart {
+    position: relative;
+    left: -20px;
+    top: -15px;
+  }
+  
+  /********** 월별 거래 빈도 line chart ***********/
+  #transaction_line_chart {
+    position: relative;
+    bottom: 22px;
+  }
+  
+  /********** 미국 수입량 line chart ***********/
+  
+  #import_linechart {
+    width: 284px !important;
+    height: 142px !important;
+  }
+  
+  .import_line_graph {
+    background-color: #ffffff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .row {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .up_or_down {
+    display: inline-block;
+    position: relative;
+    right: -80px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    color: #dd425a;
+  }
+  
+  .up_or_down #import_percentage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /********** 관심상품 알림창 *************/
+  
+  .add-favorite-container {
+    background: #4b48fda1;
+    border-radius: 10px;
+    padding: 15px 25px;
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 42%;
+    display: none;
+  }
+  
+  .add-favorite-container.show {
+    display: block;
+  }
+  
+  .remove-favorite-container {
+    background: #4b48fda1;
+    border-radius: 10px;
+    padding: 15px 25px;
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 42%;
+    display: none;
+  }
+  
+  .remove-favorite-container.show {
+    display: block;
+  }
+  
+  /**************** 관심상품 ****************/
+  
+  #main-star {
+    width: 49px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
